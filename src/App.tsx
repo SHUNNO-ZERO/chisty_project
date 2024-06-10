@@ -5,9 +5,9 @@ import { IFormFields, IOption } from "./App.interface";
 import "./App.css";
 
 const options: IOption[] = [
-  { value: "head", label: "Head" },
-  { value: "body", label: "Body" },
-  { value: "leg", label: "Leg" },
+  { value: "frequently", label: "frequently" },
+  { value: "rare", label: "rare" },
+  { value: "regular", label: "regular" },
 ];
 
 const getValue = (value: string) => {
@@ -53,11 +53,19 @@ const App: React.FC = (): JSX.Element => {
   return (
     <div className='flex flex-col gap-5 m-10'>
       <h1 className='text-xl font-bold align-middle'>
-        Virtual Doctor
+             Virtual Doctor
       </h1>
+ 
+
       <div className='flex gap-20'>
+
+        
+
         <form onSubmit={handleSubmit(submitForm)} className='form'>
           <div className='flex-input'>
+          <div>
+  <h1 >Patiend Information</h1>
+ </div>
             <label htmlFor='name'>Name</label>
             <input
               {...register("name", {
@@ -85,7 +93,7 @@ const App: React.FC = (): JSX.Element => {
             {errors.age && <p className='error'>{errors.age.message}</p>}
           </div>
           <div className='flex-input'>
-            <label htmlFor='country'>Pain Location</label>
+            <label htmlFor='country'>Pain Symptom</label>
             <Controller
               name='country'
               control={control}
@@ -99,7 +107,7 @@ const App: React.FC = (): JSX.Element => {
                 <>
                   <Select
                     id='country'
-                    placeholder='Pain Location'
+                    placeholder='Pain Symptoms'
                     options={options}
                     value={getValue(value)}
                     onChange={(newValue) =>
