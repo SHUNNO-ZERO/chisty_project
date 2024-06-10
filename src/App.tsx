@@ -189,7 +189,7 @@ const App: React.FC = (): JSX.Element => {
       </div> 
 
        
-     <h1>Institution Of Science And Technology</h1>
+     <h1>@Institution Of Science And Technology</h1>
 
       
     </div>
